@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import QTimer
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-from gemini_helper import get_performance_suggestions
+
 
 
 # System Information Function
@@ -104,7 +104,6 @@ class SystemMonitor(QWidget):
 
         ask_bot_btn = QPushButton("Ask the Bot")
         ask_bot_btn.setStyleSheet("background-color: #007acc; color: #fff; padding: 6px; border-radius: 5px;")
-        ask_bot_btn.clicked.connect(self.ask_gemini)
         gpu_layout.addWidget(ask_bot_btn)
 
         self.gpu_tab.setLayout(gpu_layout)
@@ -230,36 +229,36 @@ class SystemMonitor(QWidget):
                 f"Memory Free: {gpu.memoryFree:.0f}MB\n"
                 f"Memory Used: {gpu.memoryUsed:.0f}MB\n"
                 f"Memory Total: {gpu.memoryTotal:.0f}MB\n"
-                f"Temperature: {gpu.temperature}°C\n"
+                f"Temperature: {gpu}°C\n"
                 f"UUID: {gpu.uuid}\n"
                 f"{'-' * 40}\n"
             )
 
         self.gpu_text.setText(stats_text)
 
-    def ask_gemini(self):
-        gpus = GPUtil.getGPUs()
-        if not gpus:
-            self.gpu_text.append("\nNo GPUs detected for Gemini analysis.")
-            return
-
-        # Prepare GPU data string
-        gpu_data = ""
-        for gpu in gpus:
-            gpu_data += (
-                f"Name: {gpu.name}\n"
-                f"ID: {gpu.id}\n"
-                f"Load: {gpu.load * 100:.2f}%\n"
-                f"Memory Free: {gpu.memoryFree:.0f}MB\n"
-                f"Memory Used: {gpu.memoryUsed:.0f}MB\n"
-                f"Memory Total: {gpu.memoryTotal:.0f}MB\n"
-                f"Temperature: {gpu.temperature}°C\n"
-                f"{'-' * 40}\n"
-            )
-
-        # Call Gemini with the current data
-        suggestion = get_performance_suggestions(gpu_data)
-        self.gpu_text.append("\n[Gemini Bot Suggestion]\n" + suggestion)
+    # def ask_gemini(self):
+    #     gpus = GPUtil.getGPUs()
+    #     if not gpus:
+    #         self.gpu_text.append("\nNo GPUs detected for Gemini analysis.")
+    #         return
+    #
+    #     # Prepare GPU data string
+    #     gpu_data = ""
+    #     for gpu in gpus:
+    #         gpu_data += (
+    #             f"Name: {gpu.name}\n"
+    #             f"ID: {gpu.id}\n"
+    #             f"Load: {gpu.load * 100:.2f}%\n"
+    #             f"Memory Free: {gpu.memoryFree:.0f}MB\n"
+    #             f"Memory Used: {gpu.memoryUsed:.0f}MB\n"
+    #             f"Memory Total: {gpu.memoryTotal:.0f}MB\n"
+    #             f"Temperature: {gpu.temperature}°C\n"
+    #             f"{'-' * 40}\n"
+    #         )
+    #
+    #     # Call Gemini with the current data
+    #     suggestion = get_performance_suggestions(gpu_data)
+    #     self.gpu_text.append("\n[Gemini Bot Suggestion]\n" + suggestion)
 
     def show_top_processes(self):
         processes = []
