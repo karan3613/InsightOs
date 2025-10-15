@@ -2,9 +2,7 @@
 
 **A modern Task Manager reimagined for developers, gamers, and ML engineers.**
 
-[📺 Demo Video](YOUR_DEMO_VIDEO_LINK) | [💼 LinkedIn Post](https://lnkd.in/dXWFSPQ3)
-
----
+[📺 Demo Video](https://drive.google.com/file/d/1fOtqBNOoC-62uLI7RftGAN_QVFhataK0/view?usp=sharing) | [💼 LinkedIn Post](https://www.linkedin.com/posts/karan-chouhan-57a337283_python-genai-pyqt5-activity-7357505044826460161-p3jU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAETtOW4BGUyz-H1DfZENmLTxZMycY_DLoNE)
 
 ## 🧠 Overview
 
@@ -77,45 +75,9 @@ python main.py
 
 ---
 
-## 📸 Screenshots
-
-*Coming soon*
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
-```bash
-# Fork the repository
-# Create your feature branch
-git checkout -b feature/amazing-feature
-
-# Commit your changes
-git commit -m 'Add amazing feature'
-
-# Push to the branch
-git push origin feature/amazing-feature
-
-# Open a Pull Request
-```
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
-## 👨‍💻 Author
-
-**Your Name**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](YOUR_LINKEDIN_PROFILE)
-
----
 
 **Built with ❤️ using PyQt5, GenAI, and Python**
