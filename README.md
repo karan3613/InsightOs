@@ -10,7 +10,7 @@
 
 It goes beyond traditional tools like Task Manager — designed to deliver **deep system insights**, **AI-powered performance analysis**, and **dedicated views** for gamers and ML users.
 
----
+
 
 ## 🔍 Key Features
 
@@ -35,7 +35,7 @@ It goes beyond traditional tools like Task Manager — designed to deliver **dee
 ### 🤖 ML Tab
 - Specialized dashboard for ML users to monitor **GPU memory usage**, **session-wise tracking**, and **training efficiency**.
 
----
+
 
 ## 🧩 Tech Stack
 
